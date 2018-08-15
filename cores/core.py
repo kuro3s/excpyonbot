@@ -21,6 +21,8 @@ class Core():
 
     def stringB(self,_text):
         self._buffer.append(_text)
+        print(_text)
+        print(self._buffer.toString)
 
 
     def _isExc(self, _switch, _text=''):

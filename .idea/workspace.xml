@@ -2,65 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d44b8b38-92f0-43c3-aca3-3319b8580f90" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/bubble.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exctan9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/exp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/gaia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/hamburg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/kani.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/line.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/long.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pbubble.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pcoin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pexctan9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pgaia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/phamburg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pkani.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/plong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/psky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/psuper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pthunder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/pvanilla.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/sky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/super.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/thunder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/vanilla.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/jsonloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/stringbuilder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cores/core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cores/message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cores/responser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/definition/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/characters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/exccheckers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/cores/core.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,33 +22,54 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <state relative-caret-position="289">
+              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <folding>
+                <element signature="e#83#92#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cores/message.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cores/core.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -117,13 +82,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/cores/core.py" />
         <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="139" />
-    <option name="y" value="126" />
+    <option name="x" value="79" />
+    <option name="y" value="19" />
     <option name="width" value="1700" />
     <option name="height" value="1055" />
   </component>
@@ -161,6 +127,34 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="excpyonbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -175,20 +169,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="139" y="126" width="1700" height="1055" extended-state="0" />
+    <frame x="79" y="19" width="1700" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969916" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -201,10 +195,27 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cores/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state relative-caret-position="289">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#83#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cores/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
         </state>
       </provider>
     </entry>

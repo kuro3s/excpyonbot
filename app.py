@@ -19,7 +19,7 @@ app = Flask(__name__, static_folder='bin')
 
 line_bot_api = LineBotApi(config.token)
 handler = WebhookHandler(config.secret)
-#static_url = 'https://ae970c9a.ngrok.io'
+#static_url = 'https://7584beab.ngrok.io'
 static_url = 'https://excpyonbot.herokuapp.com'
 
 @app.route("/")
