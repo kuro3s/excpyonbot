@@ -1,0 +1,66 @@
+{
+  "excopyon" : {
+    "message" :[
+      "えくすこぴょんだぞー",
+      "すこここ",
+      "呼んだー？",
+      "んご！"
+    ],
+    "dictionary" : {
+      "バニラ"    : "vanilla.png",
+      "ロング"    : "long.png" ,
+      "スーパー"  : "super.png" ,
+      "ガイア"    : "gaia.png",
+      "サンダー"  : "thunder.png",
+      "コイン"    : "coin.png",
+      "バブル"    : "bubble.png"
+    }
+  },
+  "excotan" : {
+    "message": [
+      "こんにちはー！！",
+      "なにー？",
+      "はんばぁぁぁぁぐ！！",
+      "今日もがんばろー！！"
+    ],
+    "dictionary" : {
+      "えくすこたん1"   : "exctan1.png",
+      "えくすこたん2"   : "exctan2.png",
+      "えくすこたん3"   : "exctan3.png",
+      "えくすこたん4"   : "exctan4.png",
+      "えくすこたん5"   : "exctan5.png",
+      "えくすこたん6"   : "exctan6.png",
+      "えくすこたん7"   : "exctan7.png",
+      "えくすこたん8"   : "exctan8.png",
+      "えくすこたん9"   : "exctan9.png",
+      "えくすこたん10"  : "exctan10.png"
+    }
+  },
+  "rice" : {
+    "message": [
+      "お米を食べよう！",
+      "すこすこすこ！"
+    ],
+    "dictionary" : {
+      "米"   : "kome.png"
+    }
+  },
+  "hamburg" : {
+    "message": [
+      "はんばぁああぐ！",
+      "はんばぁぁぁぐ！"
+    ],
+    "dictionary" : {
+      "肉師匠"   : "hamburg.png"
+    }
+  },
+  "qhamburg" : {
+    "message": [
+      "もしかして、はんばぁぁぐ？",
+      "もしかして、はんばぁがぁ？"
+    ],
+    "dictionary" : {
+      "肉師匠"   : "kani.png"
+    }
+  }
+}

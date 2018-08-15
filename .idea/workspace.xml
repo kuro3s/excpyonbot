@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d44b8b38-92f0-43c3-aca3-3319b8580f90" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/bubble.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/coin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exctan9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/exp.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/gaia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/hamburg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/kani.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/line.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/long.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pbubble.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pcoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pexctan9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pgaia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/phamburg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pkani.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/plong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/psky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/psuper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pthunder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pvanilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/sky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/super.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/thunder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/vanilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/jsonloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/stringbuilder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cores/core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cores/message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cores/responser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/definition/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/characters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/exccheckers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2075299883">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="139" />
+    <option name="y" value="126" />
+    <option name="width" value="1700" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="excpyonbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="excpyonbot" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d44b8b38-92f0-43c3-aca3-3319b8580f90" name="Default Changelist" comment="" />
+      <created>1534302772843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534302772843</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="139" y="126" width="1700" height="1055" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969916" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

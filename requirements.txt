@@ -1,0 +1,14 @@
+Flask==1.0.2
+Flask-Cors==3.0.6
+Jinja2==2.10
+MarkupSafe==1.0
+Werkzeug==0.14.1
+certifi==2018.4.16
+chardet==3.0.4
+idna==2.7
+urllib3==1.23
+requests==2.19.1
+itsdangerous==0.24
+click==6.7
+gunicorn==19.9.0
+line-bot-sdk==1.8.0
