@@ -48,7 +48,7 @@ def callback():
 def handle_message(event):
     _response = mApi.response(event.message.text)
 
-    if not _response.text == None:
+    if not _response == None:
         messages = createMessage(_response)
         try:
             line_bot_api.reply_message(event.reply_token,messages)
