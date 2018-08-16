@@ -3,10 +3,11 @@
 """
     チャットボット LINE 操作 エントリポイント
 """
-import os
-from cores.message import messageAPI
+
 from definition.config import Config
 from flask import Flask, request, abort
+from cores.message import messageAPI
+
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import (MessageEvent, TextMessage,TextSendMessage,ImageSendMessage)
@@ -46,6 +47,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     _response = mApi.response(event.message.text)
+
     if not _response.text == None:
         messages = createMessage(_response)
         try:
@@ -63,12 +65,14 @@ def createMessage(_response):
     return _messages
 
 if __name__ == "__main__":
-    print(app.url_map)
-    app.run()
 
-    #while True:
-        #text = input('> ')
-        #result = message.response(text)
-        #if not result.text == None:
-        #            for c in result.response():
-        #                print(c)
+    app.run()
+"""
+    while True:
+        text = input('> ')
+        result = mApi.response(text)
+        if not result == None:
+            for c in result.response():
+                print(c)
+
+"""

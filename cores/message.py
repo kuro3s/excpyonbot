@@ -5,7 +5,7 @@
 """
 __author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
 __status__  = "production"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __date__    = "2018.8.11"
 
 from cores.core import Core
@@ -16,15 +16,13 @@ class messageAPI():
         self._core = Core()
 
     def response(self,_text):
-        self.__responser = self._core.Nothing
-
         try:
-            self._core.stringB(_text)
-            if self._core.isExcopyon() or self._core.isExcotan() or self._core.isHamburg(_text):
-                self.__responser = self._core.responser
-                self._core = Core()
-
+            self._core.buffer(_text)
+            if self._core.isExc(_text):
+                self._responser = self._core.responser
+            else:
+                return None
         except:
-            self._core = Core()
+            return
 
-        return self.__responser
+        return self._responser

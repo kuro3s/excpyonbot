@@ -5,57 +5,46 @@
 """
 __author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
 __status__  = "production"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __date__    = "2018.8.11"
 
-from common.stringbuilder import StringBuilder
+from io import StringIO
 from common.enums import Switch
+from cores.exccheckers import Excocheckers
 from cores.responser import Responser
-from model.exccheckers import Excocheckers
 
 class Core():
     def __init__(self):
-        self._ex = Excocheckers
-        self._buffer = StringBuilder()
-        self._responser = Responser(Switch.Nothing)
+        self._ex = Excocheckers()
+        self._buffer = StringIO()
 
-    def stringB(self,_text):
-        self._buffer.append(_text)
-        print(_text)
-        print(self._buffer.toString)
+    def buffer(self, _text):
+        self._buffer.write(_text)
 
-
-    def _isExc(self, _switch, _text=''):
-        _result = False
-        _buff = self._buffer.toString
+    def isExc(self,_text=''):
+        _result = True
+        _buff = self._buffer.getvalue()
+        # えくすこたん、えくすこぴょん、はんばーぐ 判定
         try:
             if not _buff == '':
-                if _switch == Switch.えくすこたん:
-                    _result = self._ex.isFullExcotan(_buff)
-                elif _switch == Switch.えくすこぴょん:
-                    _result = self._ex.isFullExcopyon(_buff)
-                elif _switch == Switch.はんばーぐ:
-                    _result = self._ex.isFullHamburg(_buff, _text)
-                    self._responser = Responser(_switch, self._ex.diff)
-                    return _result
+                if self._ex.isExcotan(_buff):
+                    _switch = Switch.えくすこたん
+                elif self._ex.isExcopyon(_buff):
+                    _switch = Switch.えくすこぴょん
+                elif self._ex.isHamburg(_buff, _text):
+                    _switch = Switch.はんばーぐ
+                else:
+                    _result = False
         except:
             self._responser = Responser(Switch.例外)
             _result = False
 
         if _result:
-            self._responser = Responser(_switch)
+            self._responser = Responser(_switch,self._ex.diff)
+            self._buffer = StringIO()
 
         return _result
 
-
-    def isExcopyon(self):
-        return self._isExc(Switch.えくすこぴょん)
-
-    def isExcotan(self):
-        return self._isExc(Switch.えくすこたん)
-
-    def isHamburg(self, text):
-        return self._isExc(Switch.はんばーぐ, text)
 
     @property
     def Nothing(self):
@@ -64,4 +53,3 @@ class Core():
     @property
     def responser(self):
         return self._responser
-

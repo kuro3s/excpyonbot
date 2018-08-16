@@ -5,7 +5,7 @@
 """
 __author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
 __status__  = "production"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __date__    = "2018.8.11"
 
 import random
@@ -32,9 +32,7 @@ class CharacterFactory():
         except:
             None
 
-        self.__key = random.choice(list(self.source['dictionary'].keys()))
-        self.__text = random.choice(self.source['message'])
-        self.__image = self.source['dictionary'][self.__key]
+        self.setter()
 
     def excopyon(self):
         """
@@ -48,9 +46,8 @@ class CharacterFactory():
                 self.source = _exCharacters.source
         except:
             None
-        self.__key = random.choice(list(self.source['dictionary'].keys()))
-        self.__text = random.choice(self.source['message'])
-        self.__image = self.source['dictionary'][self.__key]
+
+        self.setter()
 
     def hamburg(self):
         """
@@ -60,9 +57,8 @@ class CharacterFactory():
             self.source = _hsCharacters.source
         except:
             None
-        self.__key = random.choice(list(self.source['dictionary'].keys()))
-        self.__text = random.choice(self.source['message'])
-        self.__image = self.source['dictionary'][self.__key]
+
+        self.setter()
 
     def qhamburg(self):
         """
@@ -72,9 +68,8 @@ class CharacterFactory():
             self.source = _qhsCharacters.source
         except:
             None
-        self.__key = random.choice(list(self.source['dictionary'].keys()))
-        self.__text = random.choice(self.source['message'])
-        self.__image = self.source['dictionary'][self.__key]
+
+        self.setter()
 
     def exception(self):
         """
@@ -92,6 +87,12 @@ class CharacterFactory():
         self.__key = None
         self.__text = None
         self.__image = None
+
+
+    def setter(self):
+        self.__key = random.choice(list(self.source['dictionary'].keys()))
+        self.__text = random.choice(self.source['message'])
+        self.__image = self.source['dictionary'][self.__key]
 
 
     @property
