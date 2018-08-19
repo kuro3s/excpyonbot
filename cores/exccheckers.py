@@ -5,15 +5,13 @@
 """
 __author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
 __status__  = "production"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __date__    = "2018.8.11"
 
 import difflib
 import unicodedata
 
 class Excocheckers():
-    _plist = ['えくすこ','えくすこぴ','えくすこぴょ','えくすこぴょん']
-    _tlist = ['えくすこ','えくすこた','えくすこたん']
     _hlist = ['はんばぐ','ハンバグ','ハンバーグ','はんばーぐ','肉']
 
     def __init__(self):
@@ -47,6 +45,6 @@ class Excocheckers():
             d2 = difflib.SequenceMatcher(None, _dst, c).ratio()
             d1 = difflib.SequenceMatcher(None , _value, c).ratio()
             self.diff = max(d1, d2)
-            if self.diff >= 0.7:
+            if self.diff >= 0.75:
                 return True
         return _result

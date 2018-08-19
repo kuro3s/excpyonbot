@@ -5,7 +5,7 @@
 """
 __author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
 __status__  = "production"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __date__    = "2018.8.11"
 
 from io import StringIO
@@ -16,14 +16,21 @@ from cores.responser import Responser
 class Core():
     def __init__(self):
         self._ex = Excocheckers()
-        self._buffer = StringIO()
+        self._dictionary = {}
 
-    def buffer(self, _text):
-        self._buffer.write(_text)
+    def buffer(self, _id,_text):
+        _buff = StringIO()
 
-    def isExc(self,_text=''):
+        if _id in self._dictionary.keys():
+            _buff.write(self._dictionary[_id])
+
+        _buff.write(_text)
+        self._dictionary[_id] = _buff.getvalue()
+        print(_id + ':' + _text + '(buff :' + _buff.getvalue()+')')
+
+    def isExc(self,_id,_text=''):
         _result = True
-        _buff = self._buffer.getvalue()
+        _buff = self._dictionary[_id]
         # えくすこたん、えくすこぴょん、はんばーぐ 判定
         try:
             if not _buff == '':
@@ -41,7 +48,8 @@ class Core():
 
         if _result:
             self._responser = Responser(_switch,self._ex.diff)
-            self._buffer = StringIO()
+            self._dictionary.pop(_id)
+            print('diff : {}'.format(self._ex.diff))
 
         return _result
 

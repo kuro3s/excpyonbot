@@ -4,13 +4,13 @@
     チャットボット コンフィグ クラス
 """
 from builtins import property
+from common.jsonloader import loader
 
 __author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
 __status__  = "production"
 __version__ = "0.0.1"
 __date__    = "2018.8.11"
 
-from common.jsonloader import loader
 
 class Config():
 

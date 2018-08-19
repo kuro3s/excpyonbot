@@ -5,27 +5,28 @@
 """
 
 from definition.config import Config
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template
 from cores.message import messageAPI
 
 from linebot import (LineBotApi, WebhookHandler)
-from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import (MessageEvent, TextMessage,TextSendMessage,ImageSendMessage)
-from linebot.exceptions import LineBotApiError
+from linebot.exceptions import (InvalidSignatureError,LineBotApiError)
+
+static_url = 'https://0a8e3d6d.ngrok.io'
+#static_url = 'https://excpyonbot.herokuapp.com'
+static_folder = 'bin'
 
 config = Config()
 mApi = messageAPI()
 
-app = Flask(__name__, static_folder='bin')
-
+app = Flask(__name__, static_folder=static_folder)
 line_bot_api = LineBotApi(config.token)
 handler = WebhookHandler(config.secret)
-#static_url = 'https://7584beab.ngrok.io'
-static_url = 'https://excpyonbot.herokuapp.com'
 
 @app.route("/")
-def hello_world():
-    return "hello world!"
+def index():
+    return render_template('index.html', title="hello excpyon")
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -46,8 +47,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    _response = mApi.response(event.message.text)
-
+    _response = mApi.response(event.source.sender_id,event.message.text)
     if not _response == None:
         messages = createMessage(_response)
         try:
@@ -57,16 +57,16 @@ def handle_message(event):
 
 
 def createMessage(_response):
-    _original = static_url+'/bin/'+_response.original_image
-    _preview = static_url+'/bin/'+_response.preview_image
-    _message1 = TextSendMessage(text=_response.text)
-    _message2 = ImageSendMessage(original_content_url=_original, preview_image_url=_preview)
-    _messages = [_message1,_message2]
+    _original = '/'.join([static_url,static_folder, _response.original_image])
+    _preview  = '/'.join([static_url,static_folder, _response.preview_image])
+    _tmp1 = TextSendMessage(text=_response.text)
+    _tmp2 = ImageSendMessage(original_content_url=_original, preview_image_url=_preview)
+    _messages = [_tmp1,_tmp2]
     return _messages
 
 if __name__ == "__main__":
+    app.run(threaded=True, debug=True)
 
-    app.run()
 """
     while True:
         text = input('> ')
@@ -74,5 +74,4 @@ if __name__ == "__main__":
         if not result == None:
             for c in result.response():
                 print(c)
-
 """
