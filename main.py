@@ -12,8 +12,8 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.models import (MessageEvent, TextMessage,TextSendMessage,ImageSendMessage)
 from linebot.exceptions import (InvalidSignatureError,LineBotApiError)
 
-static_url = 'https://0a8e3d6d.ngrok.io'
-#static_url = 'https://excpyonbot.herokuapp.com'
+#static_url = 'https://0a8e3d6d.ngrok.io'
+static_url = 'https://excpyonbot.herokuapp.com'
 static_folder = 'bin'
 
 config = Config()
