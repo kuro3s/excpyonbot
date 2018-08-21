@@ -12,14 +12,10 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.models import (MessageEvent, TextMessage,TextSendMessage,ImageSendMessage)
 from linebot.exceptions import (InvalidSignatureError,LineBotApiError)
 
-static_url = 'https://0a8e3d6d.ngrok.io'
-#static_url = 'https://excpyonbot.herokuapp.com'
-static_folder = 'bin'
-
 config = Config()
 mApi = messageAPI()
 
-app = Flask(__name__, static_folder=static_folder)
+app = Flask(__name__, static_folder=config.static_folder)
 line_bot_api = LineBotApi(config.token)
 handler = WebhookHandler(config.secret)
 
@@ -57,21 +53,21 @@ def handle_message(event):
 
 
 def createMessage(_response):
-    _original = '/'.join([static_url,static_folder, _response.original_image])
-    _preview  = '/'.join([static_url,static_folder, _response.preview_image])
+    _original = '/'.join([config.static_url,config.static_folder, _response.original_image])
+    _preview  = '/'.join([config.static_url,config.static_folder, _response.preview_image])
     _tmp1 = TextSendMessage(text=_response.text)
     _tmp2 = ImageSendMessage(original_content_url=_original, preview_image_url=_preview)
     _messages = [_tmp1,_tmp2]
     return _messages
 
 if __name__ == "__main__":
-    app.run(threaded=True, debug=True)
-
-"""
     while True:
         text = input('> ')
-        result = mApi.response(text)
+        result = mApi.response('uID0001', text)
         if not result == None:
             for c in result.response():
                 print(c)
+
+"""
+    app.run(threaded=True, debug=True)
 """

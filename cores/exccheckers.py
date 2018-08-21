@@ -12,7 +12,6 @@ import difflib
 import unicodedata
 
 class Excocheckers():
-    _hlist = ['はんばぐ','ハンバグ','ハンバーグ','はんばーぐ','肉']
 
     def __init__(self):
         self.diff = 0.0
@@ -26,13 +25,16 @@ class Excocheckers():
         return 'えくすこたん' in _value or 'エクスコタン' in _value
 
     def isHamburg(self,value,text):
-        if text[0] == 'え' or text[0] == 'エ' or text[0] == 'ｴ':
-            return False
-
         _result = False
+        _hlist = ['はんばぐ','ハンバグ','肉']
+        if text[0] == 'え' or text[0] == 'エ' or text[0] == 'ｴ':
+            return _result
+        if value.strip(text) == '':
+            value = text
+
         _value = unicodedata.normalize('NFKC', value)
         _text = unicodedata.normalize('NFKC', text)
-        _dst = _text.translate({
+        _dst = _value.translate({
             ord(u'あ'): None,
             ord(u'ア'): None,
             ord(u'ぁ'): None,
@@ -41,10 +43,12 @@ class Excocheckers():
             ord(u'！'): None,
             ord(u'？'): None
         })
-        for c in self._hlist:
+
+        for c in _hlist:
             d2 = difflib.SequenceMatcher(None, _dst, c).ratio()
             d1 = difflib.SequenceMatcher(None , _value, c).ratio()
             self.diff = max(d1, d2)
-            if self.diff >= 0.75:
+            print('diff :{} '.format(self.diff))
+            if self.diff >= 0.86:
                 return True
         return _result
