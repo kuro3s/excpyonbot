@@ -58,13 +58,4 @@ def createMessage(_response):
     return _messages
 
 if __name__ == "__main__":
-    while True:
-        text = input('> ')
-        result = message.response('uID0001', text)
-        if result is not None:
-            for c in result.response():
-                print(c)
-
-"""
     app.run(threaded=True, debug=True)
-"""
