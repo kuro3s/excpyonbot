@@ -18,9 +18,11 @@ app = Flask(__name__, static_folder=config.static_folder)
 line_bot_api = LineBotApi(config.token)
 handler = WebhookHandler(config.secret)
 
+
 @app.route("/")
 def index():
     return render_template('index.html', title="hello excpyon")
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -39,6 +41,7 @@ def callback():
 
     return 'OK'
 
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     _response = message.response(event.source.sender_id, event.message.text)
@@ -49,6 +52,7 @@ def handle_message(event):
         except LineBotApiError as e:
             print(e)
 
+
 def createMessage(_response):
     _original = '/'.join([config.static_url, config.static_folder, _response.original_image])
     _preview = '/'.join([config.static_url, config.static_folder, _response.preview_image])
@@ -57,14 +61,15 @@ def createMessage(_response):
     _messages = [_tmp1,_tmp2]
     return _messages
 
+
 if __name__ == "__main__":
+
+    app.run(threaded=True, debug=True)
+"""
     while True:
         text = input('> ')
         result = message.response('uID0001', text)
         if result is not None:
-            for c in result.response():
+            for c in result.list:
                 print(c)
-
-"""
-    app.run(threaded=True, debug=True)
 """

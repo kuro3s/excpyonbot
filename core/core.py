@@ -3,22 +3,24 @@
 """
     チャットボット コア クラス
 """
-__author__  = "kuro3 <tkoo.xxxxxx@gmail.com>"
-__status__  = "production"
-__version__ = "0.1.0"
-__date__    = "2018.8.22"
+__author__ = 'kuro3 <tkoo.xxxxxx@gmail.com>'
+__status__ = 'production'
+__version__ = '0.1.0'
+__date__ = '2018.8.22'
 
 import difflib
 import unicodedata
 import random
 
 from io import StringIO
-from common.helper import (Switch, JsonHelper)
+from common.helper import (Switch, loader)
 
-class Core():
+
+class Core:
     def __init__(self):
-        self._ex = __excochecker__()
+        self._ex = ExcChecker()
         self._dictionary = {}
+        self._response = Response(Switch.Nothing)
 
     def buffer(self, _id, _text):
         _buff = StringIO()
@@ -28,11 +30,12 @@ class Core():
 
         _buff.write(_text)
         self._dictionary[_id] = _buff.getvalue()
-        print(_id + ':' + _text + '(buff :' + _buff.getvalue()+')')
+        print(_id + ':' + _text + '(buff :' + _buff.getvalue() + ')')
 
     def isExc(self, _id, _text=''):
         _result = True
         _buff = self._dictionary[_id]
+        _switch = Switch.Nothing
         # えくすこたん、えくすこぴょん、はんばーぐ 判定
         try:
             if not _buff == '':
@@ -45,87 +48,84 @@ class Core():
                 else:
                     _result = False
         except:
-            self._responser = __responser__(Switch.例外)
+            self._response = Response(Switch.例外)
             _result = False
 
         if _result:
-            self._responser = __responser__(_switch, self._ex.diff)
+            self._response = Response(_switch, self._ex.diff)
             self._dictionary.pop(_id)
             print('diff : {}'.format(self._ex.diff))
 
         return _result
 
     @property
-    def Nothing(self):
-        return __responser__(Switch.Nothing)
-
-    @property
-    def responser(self):
-        return self._responser
+    def response(self):
+        return self._response
 
 
-class __responser__():
-    def __init__(self, switch, diff=0.0):
-        self._character = __characterFactory__()
+class Response:
+    def __init__(self, _switch, _diff=0.0):
+        self._character = CharacterFactory()
 
-        if switch == Switch.えくすこぴょん:
+        if _switch == Switch.えくすこぴょん:
             self._character.excopyon()
-        elif switch == Switch.えくすこたん:
+        elif _switch == Switch.えくすこたん:
             self._character.excotan()
-        elif switch == Switch.はんばーぐ:
-            if diff > 0.8:
+        elif _switch == Switch.はんばーぐ:
+            if _diff > 0.8:
                 self._character.hamburg()
             else:
                 self._character.qhamburg()
-        elif switch == Switch.Nothing:
+        elif _switch == Switch.Nothing:
             self._character.nothing()
         else:
             self._character.exception()
 
-        self._name = self._character._name
-        self._text = self._character._text
-        self._image = self._character._image
+    @property
+    def list(self):
+        return [self._character.name, self._character.text, self._character.image]
 
     @property
     def name(self):
-        return self._name
+        return self._character.name
 
     @property
     def original_image(self):
-        return self._image
+        return self._character.image
 
     @property
     def preview_image(self):
-        return 'p' + self._character._image
+        return 'p' + self._character.image
 
     @property
     def text(self):
-        return self._text
+        return self._character.text
 
 
-class __excochecker__():
+class ExcChecker:
+    NFKC = 'NFKC'
+
     def __init__(self):
         self.diff = 0.0
 
-    def isExcopyon(self, value):
-        _value = unicodedata.normalize('NFKC', value)
-        return 'えくすこぴょん' in _value or 'エクスコピョン' in _value
+    def isExcopyon(self, _buff):
+        _buff = unicodedata.normalize(ExcChecker.NFKC, _buff)
+        return 'えくすこぴょん' in _buff or 'エクスコピョン' in _buff
 
-    def isExcotan(self, value):
-        _value = unicodedata.normalize('NFKC', value)
-        return 'えくすこたん' in _value or 'エクスコタン' in _value
+    def isExcotan(self, _buff):
+        _buff = unicodedata.normalize(ExcChecker.NFKC, _buff)
+        return 'えくすこたん' in _buff or 'エクスコタン' in _buff
 
-    def isHamburg(self, value, text):
+    def isHamburg(self, _buff, _text):
         _result = False
-        _hlist = ['はんばぐ','ハンバグ','肉']
-        if text[0] == 'え' or text[0] == 'エ' or text[0] == 'ｴ':
+        if _text[0] in ['え', 'エ', 'ｴ']:
             return _result
-        if value.strip(text) == '':
-            value = text
+        if _buff.strip(_text) == '':
+            _buff = _text
 
-        _value = unicodedata.normalize('NFKC', value)
-        _text = unicodedata.normalize('NFKC', text)
-        _dst =_value.translate({
+        _BUFF = unicodedata.normalize(ExcChecker.NFKC, _buff)
+        _TEXT = unicodedata.normalize(ExcChecker.NFKC, _text)
+        _COMP =_BUFF.translate({
             ord(u'あ'): None,
             ord(u'ア'): None,
             ord(u'ぁ'): None,
@@ -135,17 +135,17 @@ class __excochecker__():
             ord(u'？'): None
         })
 
-        for c in _hlist:
-            d2 = difflib.SequenceMatcher(None, _dst, c).ratio()
-            d1 = difflib.SequenceMatcher(None, _value, c).ratio()
-            self.diff = max(d1, d2)
+        for c in ['はんばぐ', 'ハンバグ', '肉']:
+            _d1 = difflib.SequenceMatcher(None, _COMP, c).ratio()
+            _d2 = difflib.SequenceMatcher(None, _TEXT, c).ratio()
+            self.diff = max(_d1, _d2)
             print('diff :{} '.format(self.diff))
             if self.diff >= 0.86:
                 return True
         return _result
 
 
-class __characterFactory__():
+class CharacterFactory:
     def __init__(self):
         self.probability = random.choice(list(range(100)))
         self.__key = None
@@ -158,15 +158,11 @@ class __characterFactory__():
             1% の確立 で こっしー 召喚
             5% の確立 で えくすこぴょん（ランダム） 召喚
         """
-        try:
-            _cls = __etCharacters__
-            if self.probability <= 1:
-                _cls = __ksCharacters__
-            elif self.probability > 1 and self.probability <= 6:
-                _cls = __exCharacters__
-
-        except:
-            None
+        _cls = self.Excotan()
+        if self.probability <= 1:
+            _cls = self.Rice()
+        elif self.probability > 1 and self.probability <= 6:
+            _cls = self.Excopyon()
 
         self.setter(_cls)
 
@@ -175,41 +171,24 @@ class __characterFactory__():
         えくすこぴょん 完成時 の 返却用
             1% の確立 で こっしー を返す
         """
-        try:
-            _cls = __ksCharacters__
-            if not self.probability <= 1:
-                _cls = __exCharacters__
-        except:
-            None
+        _cls = self.Rice()
+        if not self.probability <= 1:
+            _cls = self.Excopyon()
         self.setter(_cls)
 
     def hamburg(self):
         """
         はんばーぐ 完成時 の 返却用
         """
-        try:
-            _cls = __hsCharacters__
-        except:
-            None
+        _cls = self.Hamburg()
         self.setter(_cls)
 
     def qhamburg(self):
         """
         疑わしき はんばーぐ 完成時 の 返却用
         """
-        try:
-            _cls = __qhsCharacters__
-        except:
-            None
+        _cls = self.Qhamburg()
         self.setter(_cls)
-
-    def exception(self):
-        """
-        例外 返却用
-        """
-        self.__key = '例外'
-        self.__text = '例外エラーが発生しました。\n' + 'メンテナンス中です...'
-        self.__image = None
 
     def nothing(self):
         """
@@ -226,35 +205,29 @@ class __characterFactory__():
         self.__image = _cls.source['dictionary'][self.__key]
 
     @property
-    def _name(self):
+    def name(self):
         return self.__key
 
     @property
-    def _text(self):
+    def text(self):
         return self.__text
 
     @property
-    def _image(self):
+    def image(self):
         return self.__image
 
+    class Excopyon(object):
+        source = loader(path='/bin/exp.json')['excopyon']
 
+    class Excotan(object):
+        source = loader(path='/bin/exp.json')['excotan']
 
-class __exCharacters__(object):
-    source = JsonHelper.loader('/bin/exp.json')['excopyon']
+    class Rice(object):
+        source = loader(path='/bin/exp.json')['rice']
 
+    class Hamburg(object):
+        source = loader(path='/bin/exp.json')['hamburg']
 
-class __etCharacters__(object):
-    source = JsonHelper.loader('/bin/exp.json')['excotan']
-
-
-class __ksCharacters__(object):
-    source = JsonHelper.loader('/bin/exp.json')['rice']
-
-
-class __hsCharacters__(object):
-    source = JsonHelper.loader('/bin/exp.json')['hamburg']
-
-
-class __qhsCharacters__(object):
-    source = JsonHelper.loader('/bin/exp.json')['qhamburg']
+    class Qhamburg(object):
+        source = loader(path='/bin/exp.json')['qhamburg']
 
