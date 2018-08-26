@@ -15,6 +15,8 @@ import random
 from io import StringIO
 from common.helper import (Switch, loader)
 
+__ratio_value__ = float(loader(path='/bin/config.json')["ratio_value"])
+
 
 class Core:
     def __init__(self):
@@ -134,13 +136,12 @@ class ExcChecker:
             ord(u'！'): None,
             ord(u'？'): None
         })
-
         for c in ['はんばぐ', 'ハンバグ', '肉']:
             _d1 = difflib.SequenceMatcher(None, _COMP, c).ratio()
             _d2 = difflib.SequenceMatcher(None, _TEXT, c).ratio()
             self.diff = max(_d1, _d2)
             print('diff :{} '.format(self.diff))
-            if self.diff >= 0.86:
+            if self.diff >= __ratio_value__:
                 return True
         return _result
 
