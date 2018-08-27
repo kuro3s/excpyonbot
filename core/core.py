@@ -204,10 +204,7 @@ class CharacterFactory:
         """
         _cls = self.Excotan()
         if self.probability <= 1:
-            _cls = self.Rice()
-        elif self.probability > 1 and self.probability <= 6:
-            _cls = self.Excopyon()
-
+            _cls = self.Otherwise()
         self.setter(_cls)
 
     def excopyon(self):
@@ -215,9 +212,9 @@ class CharacterFactory:
         えくすこぴょん 完成時 の 返却用
             1% の確立 で こっしー を返す
         """
-        _cls = self.Rice()
-        if not self.probability <= 1:
-            _cls = self.Excopyon()
+        _cls = self.Excopyon()
+        if self.probability <= 1:
+            _cls = self.Otherwise()
         self.setter(_cls)
 
     def hamburg(self):
@@ -269,9 +266,6 @@ class CharacterFactory:
 
     class Excotan(object):
         source = loader(path='/bin/exp.json')['excotan']
-
-    class Rice(object):
-        source = loader(path='/bin/exp.json')['rice']
 
     class Hamburg(object):
         source = loader(path='/bin/exp.json')['hamburg']

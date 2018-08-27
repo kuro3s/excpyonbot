@@ -37,16 +37,6 @@
       "えくすこたん10"  : "exctan10.png"
     }
   },
-  "rice" : {
-    "message": [
-      "お米を食べよう！",
-      "すこすこえくすこ！"
-    ],
-    "dictionary" : {
-      "米1"   : "kome.png",
-      "米2"   : "mennkoshi.png"
-    }
-  },
   "hamburg" : {
     "message": [
       "はんばぁああぐ！",
@@ -71,6 +61,10 @@
       "えくすこ！"
     ],
     "dictionary" : {
-      "otherwise1"   : "kome.png"    }
+      "otherwise1"   : "kome.png",
+      "otherwise2"   : "mennkoshi.png",
+      "otherwise3"   : "kome2.png",
+      "otherwise4"   : "kome3.png"
+    }
   }
 }
