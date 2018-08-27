@@ -4,7 +4,7 @@
         "secret": "2ffb970793422e042ad8c02f444600f3"
     },
     "local_url": "http://localhost:5000",
-    "static_url": "https://125ea42d.ngrok.io",
+    "static_url": "https://excpyonbot.herokuapp.com",
     "static_folder":"bin",
     "ratio_value":"0.72"
 }
