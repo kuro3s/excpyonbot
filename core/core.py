@@ -41,14 +41,18 @@ class Core:
         # えくすこたん、えくすこぴょん、はんばーぐ 判定
         try:
             if not _buff == '':
-                if self._ex.isExcotan(_buff):
+                if self._ex.isExcotan(_buff, _text):
                     _switch = Switch.えくすこたん
-                elif self._ex.isExcopyon(_buff):
+                elif self._ex.isExcopyon(_buff, _text):
                     _switch = Switch.えくすこぴょん
                 elif self._ex.isHamburg(_buff, _text):
                     _switch = Switch.はんばーぐ
+                elif self._ex.isOtherwise(_buff, _text):
+                    _switch = Switch.その他
                 else:
+                    _switch = Switch.例外
                     _result = False
+
         except:
             self._response = Response(Switch.例外)
             _result = False
@@ -78,6 +82,8 @@ class Response:
                 self._character.hamburg()
             else:
                 self._character.qhamburg()
+        elif _switch == Switch.その他:
+            self._character.otherwise()
         elif _switch == Switch.Nothing:
             self._character.nothing()
         else:
@@ -110,40 +116,77 @@ class ExcChecker:
     def __init__(self):
         self.diff = 0.0
 
-    def isExcopyon(self, _buff):
-        _buff = unicodedata.normalize(ExcChecker.NFKC, _buff)
-        return 'えくすこぴょん' in _buff or 'エクスコピョン' in _buff
-
-    def isExcotan(self, _buff):
-        _buff = unicodedata.normalize(ExcChecker.NFKC, _buff)
-        return 'えくすこたん' in _buff or 'エクスコタン' in _buff
-
-    def isHamburg(self, _buff, _text):
+    def isExcCharacter(self, _clist, _buff, _text):
         _result = False
-        if _text[0] in ['え', 'エ', 'ｴ']:
-            return _result
-        if _buff.strip(_text) == '':
-            _buff = _text
 
         _BUFF = unicodedata.normalize(ExcChecker.NFKC, _buff)
         _TEXT = unicodedata.normalize(ExcChecker.NFKC, _text)
+
+        if _BUFF.strip(_TEXT) == '':
+            _BUFF = _TEXT
+
         _COMP =_BUFF.translate({
             ord(u'あ'): None,
             ord(u'ア'): None,
             ord(u'ぁ'): None,
             ord(u'ァ'): None,
             ord(u'ー'): None,
-            ord(u'！'): None,
-            ord(u'？'): None
+            ord(u'!'): None,
+            ord(u'?'): None
         })
-        for c in ['はんばぐ', 'ハンバグ', '肉']:
+        print(_COMP)
+
+        for c in _clist:
             _d1 = difflib.SequenceMatcher(None, _COMP, c).ratio()
             _d2 = difflib.SequenceMatcher(None, _TEXT, c).ratio()
-            self.diff = max(_d1, _d2)
+            _d3 = difflib.SequenceMatcher(None, _TEXT, 'おいで'+c).ratio()
+            self.diff = max(_d1, _d2, _d3)
             print('diff :{} '.format(self.diff))
             if self.diff >= __ratio_value__:
                 return True
+
         return _result
+
+
+    def isExcopyon(self, _buff, _text):
+        _BUFF = unicodedata.normalize(ExcChecker.NFKC, _buff)
+        _COMP =_BUFF.translate({
+            ord(u'ー'): None,
+            ord(u'!'): None,
+            ord(u'?'): None
+        })
+        print(_COMP)
+        if 'えくすこぴょん' in _COMP or 'エクスコピョン' in _COMP:
+            _clist = ['えくすこぴょん', 'エクスコピョン']
+            return self.isExcCharacter(_clist, _buff, _text)
+        else:
+            return False
+
+        _clist = ['えくすこぴょん', 'エクスコピョン']
+        return self.isExcCharacter(_clist, _buff, _text)
+
+
+    def isExcotan(self, _buff, _text):
+        _BUFF = unicodedata.normalize(ExcChecker.NFKC, _buff)
+        _COMP =_BUFF.translate({
+            ord(u'ー'): None,
+            ord(u'!'): None,
+            ord(u'?'): None
+        })
+        print(_COMP)
+        if 'えくすこたん' in _COMP or 'エクスコタン' in _COMP:
+            _clist = ['えくすこたん', 'エクスコタン']
+            return self.isExcCharacter(_clist, _buff, _text)
+        else:
+            return False
+
+    def isHamburg(self, _buff, _text):
+        _clist = ['はんばぐ', 'ハンバグ', '肉', 'にく', '師匠']
+        return self.isExcCharacter(_clist, _buff, _text)
+
+    def isOtherwise(self, _buff, _text):
+        _clist = ['すこ','すこすこ', '米', 'お米を食べよう', 'こっし', 'こしひかり']
+        return self.isExcCharacter(_clist, _buff, _text)
 
 
 class CharacterFactory:
@@ -181,15 +224,19 @@ class CharacterFactory:
         """
         はんばーぐ 完成時 の 返却用
         """
-        _cls = self.Hamburg()
-        self.setter(_cls)
+        self.setter(self.Hamburg())
 
     def qhamburg(self):
         """
         疑わしき はんばーぐ 完成時 の 返却用
         """
-        _cls = self.Qhamburg()
-        self.setter(_cls)
+        self.setter(self.Qhamburg())
+
+    def otherwise(self):
+        """
+        その他
+        """
+        self.setter(self.Otherwise())
 
     def nothing(self):
         """
@@ -231,4 +278,7 @@ class CharacterFactory:
 
     class Qhamburg(object):
         source = loader(path='/bin/exp.json')['qhamburg']
+
+    class Otherwise(object):
+        source = loader(path='/bin/exp.json')['otherwise']
 
