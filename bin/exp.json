@@ -21,7 +21,8 @@
       "こんにちはー！！",
       "なにー？",
       "はんばぁぁぁぁぐ！！",
-      "今日もがんばろー！！"
+      "今日もがんばろー！！",
+      "ふぉおおおお！"
     ],
     "dictionary" : {
       "えくすこたん1"   : "exctan1.png",
@@ -39,10 +40,11 @@
   "rice" : {
     "message": [
       "お米を食べよう！",
-      "すこすこすこ！"
+      "すこすこえくすこ！"
     ],
     "dictionary" : {
-      "米"   : "kome.png"
+      "米1"   : "kome.png",
+      "米2"   : "mennkoshi.png"
     }
   },
   "hamburg" : {
@@ -62,5 +64,13 @@
     "dictionary" : {
       "肉師匠"   : "kani.png"
     }
+  },
+  "otherwise" :{
+    "message": [
+      "お米を食べよう！",
+      "えくすこ！"
+    ],
+    "dictionary" : {
+      "otherwise1"   : "kome.png"    }
   }
 }
